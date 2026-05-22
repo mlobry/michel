@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toiture & Tradition - Couvreur Professionnel</title>
+    <meta name="description" content="Couvreur expert en rénovation, réparation, démoussage et ravalement. 3 générations de savoir-faire.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2332;
+            --secondary: #c4935c;
+            --accent: #e74c3c;
+            --light-bg: #f8f7f4;
+            --text-dark: #1a2332;
+            --text-light: #666;
+            --border-color: #e0ddd6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        /* ===== LANGUAGE TOGGLE ===== */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--border-color);
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-btn.active {
+            background: var(--secondary);
+            color: white;
+            border-color: var(--secondary);
+        }
+
+        .lang-btn:hover:not(.active) {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* ===== HEADER & NAV ===== */
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            position: relative;
+            z-index: 99;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo-text {
+            text-align: left;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 0;
+            z-index: 99;
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        nav li {
+            border-right: 1px solid var(--border-color);
+        }
+
+        nav li:last-child {
+            border-right: none;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 18px 25px;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(26,35,50,0.7) 0%, rgba(26,35,50,0.7) 100%), 
+                        url('nettoyage-toiture-pro.jpg') center/cover no-repeat;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                background: linear-gradient(135deg, rgba(26,35,50,0.8) 0%, rgba(26,35,50,0.8) 100%), 
+                            url('nettoyage-toiture-pro.jpg') center/cover no-repeat;
+                background-attachment: scroll;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-section {
+                background-attachment: fixed;
+            }
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(180deg, rgba(248,247,244,1) 0%, rgba(248,247,244,0) 100%);
+            pointer-events: none;
+        }
+
+        .hero-alert {
+            background: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.95);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            max-width: 600px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b08548;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(196,147,92,0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+            transform: translateY(-2px);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            background: white;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            line-height: 1;
+            margin-bottom: 10px;
+            display: inline-block;
+            min-width: 120px;
+            animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .stat-number.animate {
+            animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--text-dark);
+        }
+
+        .about-section .section-title {
+            color: white;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .service-card-header {
+            background: linear-gradient(135deg, rgba(196,147,92,0.2) 0%, rgba(196,147,92,0.1) 100%);
+            padding: 25px;
+            border-bottom: 1px solid rgba(196,147,92,0.3);
+        }
+
+        .service-card-header h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .service-card-header p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .service-card-body {
+            padding: 25px;
+            background: white;
+        }
+
+        .service-card-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-card-body li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .service-card-body li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            background: var(--primary);
+            color: white;
+            padding: 80px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-text h3 {
+            color: var(--secondary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .generations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .generation-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+            backdrop-filter: blur(10px);
+        }
+
+        .generation-card h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .generation-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+        }
+
+        /* ===== ASBESTOS SPECIALITY CARD ===== */
+        .asbestos-card {
+            background: var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .asbestos-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .asbestos-card-header {
+            background: linear-gradient(135deg, rgba(196,147,92,0.2) 0%, rgba(196,147,92,0.1) 100%);
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            border-bottom: 1px solid rgba(196,147,92,0.3);
+        }
+
+        .asbestos-title-group h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .asbestos-title-group p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .asbestos-card-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: white;
+        }
+
+        .asbestos-column h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .asbestos-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .asbestos-column li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .asbestos-column li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .asbestos-card-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .asbestos-card-content {
+                grid-template-columns: 1fr;
+                padding: 30px;
+                gap: 30px;
+            }
+
+            .asbestos-icon {
+                font-size: 2.5rem;
+                min-width: auto;
+            }
+        }
+
+        /* ===== ADVANTAGES SECTION ===== */
+        .advantages-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--light-bg);
+        }
+
+        .advantages-container {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .advantages-grid {
+            display: flex;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .advantage-item {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            min-width: 100%;
+            flex-shrink: 0;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .advantage-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: #b08548;
+            transform: scale(1.1);
+        }
+
+        .carousel-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .carousel-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background: var(--secondary);
+            width: 30px;
+            border-radius: 5px;
+        }
+        .realizations-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .realizations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .realization-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--secondary);
+        }
+
+        .realization-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .realization-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(26,35,50,0.1) 0%, rgba(196,147,92,0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        .realization-card-content {
+            padding: 25px;
+        }
+
+        .realization-card-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .realization-card-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .realization-tag {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ===== ADVANTAGES SECTION ===== */
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .advantage-item {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .advantage-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .advantage-item p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background: var(--primary);
+            color: white;
+            padding: 80px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item label {
+            font-weight: 600;
+            color: var(--secondary);
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .contact-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .contact-item a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--text-dark);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(196,147,92,0.2);
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            background: var(--secondary);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group button:hover {
+            background: #b08548;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(196,147,92,0.3);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        footer p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                gap: 40px;
+            }
+
+            .language-toggle {
+                top: 10px;
+                right: 10px;
+                padding: 8px;
+            }
+
+            .lang-btn {
+                padding: 8px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- LANGUAGE TOGGLE -->
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="switchLanguage('fr')">🇫🇷 FR</button>
+        <button class="lang-btn" onclick="switchLanguage('nl')">🇧🇪 NL</button>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-text">
+                <h1 id="company-name">Toiture & Tradition</h1>
+                <p id="company-tagline">Couvreur Professionnel</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="#services" id="nav-services">Services</a></li>
+            <li><a href="#about" id="nav-about">À Propos</a></li>
+            <li><a href="realizations.html" id="nav-realizations">Nos Réalisations</a></li>
+            <li><a href="#advantages" id="nav-advantages">Avantages</a></li>
+            <li><a href="#contact" id="nav-contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-alert" id="hero-alert">Maakt uw dak u ongerust?</div>
+        <h2 class="hero-title" id="hero-title">3 Generaties Expertise</h2>
+        <p class="hero-subtitle" id="hero-subtitle">Om uw huis definitief te beschermen</p>
+        <p class="hero-desc" id="hero-desc">Stille infiltraties, gescheurde pannen, energiebreuk die explodeert... Elke dag die voorbijgaat verergert de schade en verveelvoudigt de kosten.</p>
+        <div class="hero-cta">
+            <button class="btn btn-primary" id="btn-quote" onclick="document.getElementById('contact').scrollIntoView()">Gratis Offerte</button>
+            <button class="btn btn-secondary" id="btn-phone" onclick="window.location.href='tel:+3221234567'">Bellen</button>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section" id="stats">
+        <div class="stat-item">
+            <div class="stat-number" id="stat-years">25</div>
+            <div class="stat-label" id="stat-label-1">Jaren Ervaring</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="stat-projects">520</div>
+            <div class="stat-label" id="stat-label-2">Gerenoveerde Daken</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="stat-satisfaction">98<span style="font-size: 1.8rem;">%</span></div>
+            <div class="stat-label" id="stat-label-3">Tevreden Klanten</div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <h2 class="section-title" id="services-title">Onze Diensten</h2>
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc1-title">Plaatsing en Renovatie</h3>
+                    <p id="svc1-desc">Volledige installatie en restauratie van uw dak</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc1-item1">Plaatsing van pannen, leisteen en schindels</li>
+                        <li id="svc1-item2">Platte daken met membranen</li>
+                        <li id="svc1-item3">Ondersteunende constructie en onderlaag</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc2-title">Isolatie en Waterdichtheid</h3>
+                    <p id="svc2-desc">Energieverbetering en infiltratiepreventie</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc2-item1">Thermische en akoestische isolatie</li>
+                        <li id="svc2-item2">Dampscherm- en regenkapmembranen</li>
+                        <li id="svc2-item3">Vochtbestrijding</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc3-title">Zinguerie et Gestion de l'Eau</h3>
+                    <p id="svc3-desc">Goten, kanalen en waterafvoersystemen</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc3-item1">Goten en kanalen van hoge kwaliteit</li>
+                        <li id="svc3-item2">Aansluiting en waterdichte verbindingen</li>
+                        <li id="svc3-item3">Regenwater inzameling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc4-title">Onderhoud en Reparatie</h3>
+                    <p id="svc4-desc">Regelmatig onderhoud en spoedreparaties</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc4-item1">Lekkage zoeken en repareren</li>
+                        <li id="svc4-item2">Gebroken pannen vervangen</li>
+                        <li id="svc4-item3">Accessoires (Velux, erkers)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc5-title">Dakonmossing</h3>
+                    <p id="svc5-desc">Professionele reiniging en antimosbehandeling</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc5-item1">Verwijdering van mossen en lichenen</li>
+                        <li id="svc5-item2">Langdurige preventieve behandeling</li>
+                        <li id="svc5-item3">Esthetische restauratie</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <h3 id="svc6-title">Gevelrenovatie</h3>
+                    <p id="svc6-desc">Volledige reiniging en renovatie van uw gevels</p>
+                </div>
+                <div class="service-card-body">
+                    <ul>
+                        <li id="svc6-item1">Hoogtewasser reinigen kunststof specie</li>
+                        <li id="svc6-item2">Gevelrenovatie en herstelling</li>
+                        <li id="svc6-item3">Behandeling tegen schimmels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASBESTOS SPECIALITY CARD -->
+        <div style="margin-top: 60px; max-width: 1200px; margin-left: auto; margin-right: auto; width: 100%;">
+            <div class="asbestos-card">
+                <div class="asbestos-card-header">
+                    <div class="asbestos-title-group">
+                        <h2 id="asbestos-title">Expertise Spécialisée : Désamiantage</h2>
+                        <p id="asbestos-subtitle">Services professionnels et sécurisés pour l'enlèvement d'amiante</p>
+                    </div>
+                </div>
+                <div class="asbestos-card-content">
+                    <div class="asbestos-column">
+                        <h3 id="asbestos-h3-1">Nos Services</h3>
+                        <ul>
+                            <li id="asbestos-item1">Diagnostic et identification de l'amiante</li>
+                            <li id="asbestos-item2">Enlèvement sécurisé et conforme aux normes</li>
+                            <li id="asbestos-item3">Traitement et élimination certifiée</li>
+                            <li id="asbestos-item4">Rapports de conformité et documentation</li>
+                        </ul>
+                    </div>
+                    <div class="asbestos-column">
+                        <h3 id="asbestos-h3-2">Pourquoi Nous Choisir</h3>
+                        <ul>
+                            <li id="asbestos-item5">Équipe formée et certifiée en désamiantage</li>
+                            <li id="asbestos-item6">Respect strict des protocoles de sécurité</li>
+                            <li id="asbestos-item7">Assurance responsabilité civile complète</li>
+                            <li id="asbestos-item8">Devis gratuit et transparent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2 class="section-title" id="about-title">Over Ons</h2>
+            <div class="about-text">
+                <h3 id="about-heading">3 Generaties Vakmanschap</h3>
+                <p id="about-p1">Sinds haar ontstaan is Dakwerk & Traditie een referentie in dakbedekking en renovatie. Ons familiebedrijf perpetueert vakmanschap dat van vader op zoon wordt doorgegeven, garanderend kwaliteit en betrouwbaarheid op elk project.</p>
+                <p id="about-p2">Onze ervaren ambachtslieden combineren traditionele technieken met moderne innovaties om duurzame en esthetische oplossingen te bieden. Elk project wordt uitgevoerd met toewijding en precisie.</p>
+            </div>
+
+            <div class="generations">
+                <div class="generation-card">
+                    <h4 id="gen1">1<sup>e</sup> Generatie :</h4>
+                    <p id="gen1-desc">Stichter en meesterdakdekker</p>
+                </div>
+                <div class="generation-card">
+                    <h4 id="gen2">2<sup>e</sup> Generatie :</h4>
+                    <p id="gen2-desc">Uitbreiding en modernisering</p>
+                </div>
+                <div class="generation-card">
+                    <h4 id="gen3">3<sup>e</sup> Generatie :</h4>
+                    <p id="gen3-desc">Hedendaagse excellence en innovatie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADVANTAGES SECTION -->
+    <section class="advantages-section" id="advantages">
+        <h2 class="section-title" id="adv-title">Onze Voordelen</h2>
+        <div class="advantages-container">
+            <div class="advantages-grid" id="advantagesCarousel">
+                <div class="advantage-item">
+                    <h3 id="adv1-title">Professionaliteit</h3>
+                    <p id="adv1-desc">Gekwalificeerd team en erkende ervaring sinds decennia</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 id="adv2-title">Concurrerende Prijzen</h3>
+                    <p id="adv2-desc">Gratis offerte zonder verplichting, prijzen aangepast aan uw budget</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 id="adv3-title">Reactiviteit</h3>
+                    <p id="adv3-desc">Spoedreparatie mogelijk 7 dagen per week</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 id="adv4-title">Garantie</h3>
+                    <p id="adv4-desc">Tienjaargarantie en beroepsaansprakelijkheid</p>
+                </div>
+                <div class="advantage-item">
+                    <h3 id="adv5-title">Ecologie</h3>
+                    <p id="adv5-desc">Duurzame materialen en milieurespect</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn" onclick="scrollCarousel('left')">❮</button>
+                <button class="carousel-btn" id="nextBtn" onclick="scrollCarousel('right')">❯</button>
+            </div>
+            <div class="carousel-indicator" id="carouselIndicator"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 id="contact-title">Neem Contact Op</h3>
+                <div class="contact-item">
+                    <label id="contact-phone-label">Telefoon</label>
+                    <p id="contact-phone"><a href="tel:+3221234567" style="color: inherit; text-decoration: none;">+32 (0) 2 123 45 67</a></p>
+                </div>
+                <div class="contact-item">
+                    <label id="contact-email-label">E-mail</label>
+                    <p id="contact-email"><a href="mailto:contact@toiture-tradition.be" style="color: inherit; text-decoration: none;">contact@toiture-tradition.be</a></p>
+                </div>
+                <div class="contact-item">
+                    <label id="contact-address-label">Adres</label>
+                    <p id="contact-address">Wavre, Brabant Wallon, België</p>
+                </div>
+                <div class="contact-item">
+                    <label id="contact-hours-label">Openingstijden</label>
+                    <p id="contact-hours">Ma-Vr: 08u-18u<br>Za: 09u-17u</p>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label id="form-name-label" for="name">Volledige Naam</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label id="form-email-label" for="email">E-mailadres</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label id="form-phone-label" for="phone">Telefoon</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label id="form-subject-label" for="subject">Onderwerp</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label id="form-message-label" for="message">Bericht</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="form-submit">Bericht Verzenden</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p id="footer-1">&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.</p>
+        <p id="footer-2">Professionele dakdekker - Brussel, Waals Brabant, België</p>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            fr: {
+                'company-name': 'Toiture & Tradition',
+                'company-tagline': 'Couvrir l\'Excellence',
+                'nav-services': 'Services',
+                'nav-about': 'À Propos',
+                'nav-realizations': 'Nos Réalisations',
+                'nav-advantages': 'Avantages',
+                'nav-contact': 'Contact',
+                'hero-alert': 'Votre toiture vous inquiète ?',
+                'hero-title': '3 Générations de Couvreur',
+                'hero-subtitle': 'Pour protéger définitivement votre maison',
+                'hero-desc': 'Des infiltrations silencieuses, des tuiles fissurées, une rupture thermique qui s\'aggrave... Chaque jour qui passe aggrave les dégâts et multiplie les coûts.',
+                'stat-label-1': 'Années d\'Expérience',
+                'stat-label-2': 'Toitures Rénovées',
+                'stat-label-3': '% Clients Satisfaits',
+                'btn-quote': 'Devis Gratuit',
+                'btn-phone': 'Appeler',
+                'services-title': 'Nos Services',
+                'svc1-title': 'Pose et Rénovation',
+                'svc1-desc': 'Installation complète et restauration de votre toiture',
+                'svc1-item1': 'Pose de tuiles, ardoises et bardeaux',
+                'svc1-item2': 'Toitures plates avec membranes',
+                'svc1-item3': 'Structure support et sous-couche',
+                'svc2-title': 'Isolation et Étanchéité',
+                'svc2-desc': 'Amélioration énergétique et prévention des infiltrations',
+                'svc2-item1': 'Isolation thermique et acoustique',
+                'svc2-item2': 'Membranes pare-vapeur et de protection',
+                'svc2-item3': 'Traitement de l\'humidité',
+                'svc3-title': 'Zinguerie et Gestion de l\'Eau',
+                'svc3-desc': 'Gouttières, chenaux et systèmes de drainage',
+                'svc3-item1': 'Gouttières et chenaux de qualité',
+                'svc3-item2': 'Raccordement et joints étanches',
+                'svc3-item3': 'Récupération d\'eau de pluie',
+                'svc4-title': 'Entretien et Réparation',
+                'svc4-desc': 'Maintenance régulière et réparations d\'urgence',
+                'svc4-item1': 'Recherche et réparation de fuites',
+                'svc4-item2': 'Remplacement de tuiles cassées',
+                'svc4-item3': 'Accessoires (Velux, lucarnes)',
+                'svc5-title': 'Démoussage de Toiture',
+                'svc5-desc': 'Nettoyage professionnel et traitement antimousse',
+                'svc5-item1': 'Enlèvement des mousses et lichens',
+                'svc5-item2': 'Traitement préventif durable',
+                'svc5-item3': 'Restauration esthétique',
+                'svc6-title': 'Ravalement de Façade',
+                'svc6-desc': 'Nettoyage complet et rénovation de vos façades',
+                'svc6-item1': 'Nettoyage haute pression des joints',
+                'svc6-item2': 'Ravalement et rejointement',
+                'svc6-item3': 'Traitement antifongique',
+                'asbestos-title': 'Expertise Spécialisée : Désamiantage',
+                'asbestos-subtitle': 'Services professionnels et sécurisés pour l\'enlèvement d\'amiante',
+                'asbestos-h3-1': 'Nos Services',
+                'asbestos-item1': 'Diagnostic et identification de l\'amiante',
+                'asbestos-item2': 'Enlèvement sécurisé et conforme aux normes',
+                'asbestos-item3': 'Traitement et élimination certifiée',
+                'asbestos-item4': 'Rapports de conformité et documentation',
+                'asbestos-h3-2': 'Pourquoi Nous Choisir',
+                'asbestos-item5': 'Équipe formée et certifiée en désamiantage',
+                'asbestos-item6': 'Respect strict des protocoles de sécurité',
+                'asbestos-item7': 'Assurance responsabilité civile complète',
+                'asbestos-item8': 'Devis gratuit et transparent',
+                'about-title': 'À Propos',
+                'about-heading': '3 Générations de Savoir-Faire',
+                'about-p1': 'Depuis sa création, Toiture & Tradition est une référence en couverture et rénovation. Notre entreprise familiale perpétue un savoir-faire transmis de père en fils, garantissant qualité et fiabilité sur chaque projet.',
+                'about-p2': 'Nos artisans expérimentés combinent des techniques traditionnelles avec les innovations modernes pour offrir des solutions durables et esthétiques. Chaque projet est réalisé avec dévouement et précision.',
+                'gen1': '1<sup>re</sup> Génération :',
+                'gen1-desc': 'Fondateur et maître couvreur',
+                'gen2': '2<sup>e</sup> Génération :',
+                'gen2-desc': 'Expansion et modernisation',
+                'gen3': '3<sup>e</sup> Génération :',
+                'gen3-desc': 'Excellence contemporaine et innovation',
+                'real-title': 'Nos Réalisations',
+                'real1-title': 'Rénovation Complète',
+                'real1-desc': 'Réfection totale d\'une toiture ardoise endommagée avec isolation thermique moderne',
+                'real1-tag': 'Bruxelles',
+                'real2-title': 'Réparation d\'Urgence',
+                'real2-desc': 'Intervention rapide pour colmater une fuite suite à tempête et pose de nouvelles tuiles',
+                'real2-tag': 'Brabant Wallon',
+                'real3-title': 'Démoussage Professionnel',
+                'real3-desc': 'Nettoyage complet et traitement antimousse d\'une toiture avec restauration esthétique',
+                'real3-tag': 'Wavre',
+                'real4-title': 'Isolation et Étanchéité',
+                'real4-desc': 'Mise en place de membranes d\'étanchéité et isolation thermique haute performance',
+                'real4-tag': 'Région Liège',
+                'real5-title': 'Système d\'Évacuation',
+                'real5-desc': 'Installation de gouttières et système de récupération d\'eau de pluie écologique',
+                'real5-tag': 'Brabant',
+                'real6-title': 'Ravalement de Façade',
+                'real6-desc': 'Nettoyage haute pression et traitement de façade avec restauration complète',
+                'real6-tag': 'Bruxelles',
+                'adv-title': 'Nos Avantages',
+                'adv1-title': 'Professionnalisme',
+                'adv1-desc': 'Équipe qualifiée et expérience reconnue depuis des décennies',
+                'adv2-title': 'Tarifs Compétitifs',
+                'adv2-desc': 'Devis gratuit sans engagement, prix adaptés à votre budget',
+                'adv3-title': 'Réactivité',
+                'adv3-desc': 'Réparation d\'urgence possible 7 jours sur 7',
+                'adv4-title': 'Garantie',
+                'adv4-desc': 'Garantie 10 ans et assurance responsabilité civile',
+                'adv5-title': 'Écologie',
+                'adv5-desc': 'Matériaux durables et respect de l\'environnement',
+                'contact-title': 'Nous Contacter',
+                'contact-phone-label': 'Téléphone',
+                'contact-phone': '+32 (0) 2 123 45 67',
+                'contact-email-label': 'E-mail',
+                'contact-address-label': 'Adresse',
+                'contact-address': 'Wavre, Brabant Wallon, Belgique',
+                'contact-hours-label': 'Horaires',
+                'contact-hours': 'Lun-Ven : 08h-18h<br>Sam : 09h-17h',
+                'form-name-label': 'Nom Complet',
+                'form-email-label': 'Adresse E-mail',
+                'form-phone-label': 'Téléphone',
+                'form-subject-label': 'Sujet',
+                'form-message-label': 'Message',
+                'form-submit': 'Envoyer le Message',
+                'footer-1': '&copy; 2024 Toiture & Tradition. Tous droits réservés.',
+                'footer-2': 'Couvreur professionnel - Bruxelles, Brabant Wallon, Belgique'
+            },
+            nl: {
+                'company-name': 'Dakwerk & Traditie',
+                'company-tagline': 'Dekking van Uitmuntendheid',
+                'nav-services': 'Diensten',
+                'nav-about': 'Over Ons',
+                'nav-realizations': 'Onze Realisaties',
+                'nav-advantages': 'Voordelen',
+                'nav-contact': 'Contact',
+                'hero-alert': 'Maakt uw dak u ongerust?',
+                'hero-title': '3 Generaties Dakdekker',
+                'hero-subtitle': 'Om uw huis definitief te beschermen',
+                'hero-desc': 'Stille infiltraties, gescheurde pannen, energiebreuk die explodeert... Elke dag die voorbijgaat verergert de schade en verveelvoudigt de kosten.',
+                'stat-label-1': 'Jaren Ervaring',
+                'stat-label-2': 'Gerenoveerde Daken',
+                'stat-label-3': '% Tevreden Klanten',
+                'btn-quote': 'Gratis Offerte',
+                'btn-phone': 'Bellen',
+                'services-title': 'Onze Diensten',
+                'svc1-title': 'Plaatsing en Renovatie',
+                'svc1-desc': 'Volledige installatie en restauratie van uw dak',
+                'svc1-item1': 'Plaatsing van pannen, leisteen en schindels',
+                'svc1-item2': 'Platte daken met membranen',
+                'svc1-item3': 'Ondersteunende constructie en onderlaag',
+                'svc2-title': 'Isolatie en Waterdichtheid',
+                'svc2-desc': 'Energieverbetering en infiltratiepreventie',
+                'svc2-item1': 'Thermische en akoestische isolatie',
+                'svc2-item2': 'Dampscherm- en regenkapmembranen',
+                'svc2-item3': 'Vochtbestrijding',
+                'svc3-title': 'Zinkwerk en Waterbeheer',
+                'svc3-desc': 'Goten, kanalen en waterafvoersystemen',
+                'svc3-item1': 'Goten en kanalen van hoge kwaliteit',
+                'svc3-item2': 'Aansluiting en waterdichte verbindingen',
+                'svc3-item3': 'Regenwater inzameling',
+                'svc4-title': 'Onderhoud en Reparatie',
+                'svc4-desc': 'Regelmatig onderhoud en spoedreparaties',
+                'svc4-item1': 'Lekkage zoeken en repareren',
+                'svc4-item2': 'Gebroken pannen vervangen',
+                'svc4-item3': 'Accessoires (Velux, erkers)',
+                'svc5-title': 'Dakonmossing',
+                'svc5-desc': 'Professionele reiniging en antimosbehandeling',
+                'svc5-item1': 'Verwijdering van mossen en lichenen',
+                'svc5-item2': 'Langdurige preventieve behandeling',
+                'svc5-item3': 'Esthetische restauratie',
+                'svc6-title': 'Gevelrenovatie',
+                'svc6-desc': 'Volledige reiniging en renovatie van uw gevels',
+                'svc6-item1': 'Hoogtewasser reinigen kunststof specie',
+                'svc6-item2': 'Gevelrenovatie en herstelling',
+                'svc6-item3': 'Behandeling tegen schimmels',
+                'asbestos-title': 'Gespecialiseerde Expertise: Asbestverwijdering',
+                'asbestos-subtitle': 'Professionele en veilige services voor asbestverwijdering',
+                'asbestos-h3-1': 'Onze Diensten',
+                'asbestos-item1': 'Diagnose en identificatie van asbest',
+                'asbestos-item2': 'Veilige verwijdering volgens normen',
+                'asbestos-item3': 'Behandeling en gecertificeerde verwijdering',
+                'asbestos-item4': 'Conformiteitsrapporten en documentatie',
+                'asbestos-h3-2': 'Waarom Ons Kiezen',
+                'asbestos-item5': 'Team getraind en gecertificeerd in asbestverwijdering',
+                'asbestos-item6': 'Strikt respect voor veiligheidsprotocollen',
+                'asbestos-item7': 'Volledige beroepsaansprakelijkheidsverzekering',
+                'asbestos-item8': 'Gratis en transparante offerte',
+                'about-title': 'Over Ons',
+                'about-heading': '3 Generaties Vakmanschap',
+                'about-p1': 'Sinds haar ontstaan is Dakwerk & Traditie een referentie in dakbedekking en renovatie. Ons familiebedrijf perpetueert vakmanschap dat van vader op zoon wordt doorgegeven, garanderend kwaliteit en betrouwbaarheid op elk project.',
+                'about-p2': 'Onze ervaren ambachtslieden combineren traditionele technieken met moderne innovaties om duurzame en esthetische oplossingen te bieden. Elk project wordt uitgevoerd met toewijding en precisie.',
+                'gen1': '1<sup>e</sup> Generatie :',
+                'gen1-desc': 'Stichter en meesterdakdekker',
+                'gen2': '2<sup>e</sup> Generatie :',
+                'gen2-desc': 'Uitbreiding en modernisering',
+                'gen3': '3<sup>e</sup> Generatie :',
+                'gen3-desc': 'Hedendaagse excellence en innovatie',
+                'real-title': 'Onze Realisaties',
+                'real1-title': 'Volledige Renovatie',
+                'real1-desc': 'Volledige vernieuwing van een beschadigd leisteen dak met moderne thermische isolatie',
+                'real1-tag': 'Brussel',
+                'real2-title': 'Spoedreparatie',
+                'real2-desc': 'Snelle interventie om een lek na storm te dichten en nieuwe pannen te plaatsen',
+                'real2-tag': 'Waals Brabant',
+                'real3-title': 'Professioneel Dakonmossen',
+                'real3-desc': 'Volledige reiniging en antimosbehandeling van een dak met esthetische restauratie',
+                'real3-tag': 'Wavre',
+                'real4-title': 'Isolatie en Waterdichtheid',
+                'real4-desc': 'Plaatsing van waterdichte membranen en hoge performance thermische isolatie',
+                'real4-tag': 'Regio Luik',
+                'real5-title': 'Waterdrainage Systeem',
+                'real5-desc': 'Installatie van goten en ecologisch regenwater opslagsysteem',
+                'real5-tag': 'Brabant',
+                'real6-title': 'Gevelrenovatie',
+                'real6-desc': 'Hoogtewasser reinigen en gevelbehang met volledige restauratie',
+                'real6-tag': 'Brussel',
+                'adv-title': 'Onze Voordelen',
+                'adv1-title': 'Professionaliteit',
+                'adv1-desc': 'Gekwalificeerd team en erkende ervaring sinds decennia',
+                'adv2-title': 'Concurrerende Prijzen',
+                'adv2-desc': 'Gratis offerte zonder verplichting, prijzen aangepast aan uw budget',
+                'adv3-title': 'Reactiviteit',
+                'adv3-desc': 'Spoedreparatie mogelijk 7 dagen per week',
+                'adv4-title': 'Garantie',
+                'adv4-desc': 'Tienjaargarantie en beroepsaansprakelijkheid',
+                'adv5-title': 'Ecologie',
+                'adv5-desc': 'Duurzame materialen en milieurespect',
+                'contact-title': 'Neem Contact Op',
+                'contact-phone-label': 'Telefoon',
+                'contact-phone': '+32 (0) 2 123 45 67',
+                'contact-email-label': 'E-mail',
+                'contact-address-label': 'Adres',
+                'contact-address': 'Wavre, Brabant Wallon, België',
+                'contact-hours-label': 'Openingstijden',
+                'contact-hours': 'Ma-Vr: 08u-18u<br>Za: 09u-17u',
+                'form-name-label': 'Volledige Naam',
+                'form-email-label': 'E-mailadres',
+                'form-phone-label': 'Telefoon',
+                'form-subject-label': 'Onderwerp',
+                'form-message-label': 'Bericht',
+                'form-submit': 'Bericht Verzenden',
+                'footer-1': '&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.',
+                'footer-2': 'Professionele dakdekker - Brussel, Waals Brabant, België'
+            }
+        };
+
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Trouver le bouton correspondant et l'activer
+            buttons.forEach(btn => {
+                if (lang === 'fr' && btn.textContent.includes('FR')) {
+                    btn.classList.add('active');
+                } else if (lang === 'nl' && btn.textContent.includes('NL')) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            for (const [key, value] of Object.entries(translations[lang])) {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.innerHTML = value;
+                }
+            }
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Store preference
+            localStorage.setItem('selectedLanguage', lang);
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            const mailtoLink = `mailto:contact@toiture-tradition.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`)}`;
+            window.location.href = mailtoLink;
+        }
+
+        // Animation des stats au scroll
+        let statsAnimated = false;
+
+        function animateStats() {
+            if (statsAnimated) return;
+            statsAnimated = true;
+
+            const stats = [
+                { id: 'stat-years', target: 25, duration: 1.5 },
+                { id: 'stat-projects', target: 520, duration: 1.8 },
+                { id: 'stat-satisfaction', target: 98, duration: 1.5 }
+            ];
+
+            stats.forEach(stat => {
+                const element = document.getElementById(stat.id);
+                if (element) {
+                    const startTime = Date.now();
+                    const duration = stat.duration * 1000;
+
+                    element.classList.add('animate');
+
+                    function updateCount() {
+                        const elapsed = Date.now() - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const currentValue = Math.floor(progress * stat.target);
+                        
+                        element.textContent = currentValue;
+
+                        if (progress < 1) {
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            element.textContent = stat.target;
+                        }
+                    }
+
+                    updateCount();
+                }
+            });
+        }
+
+        // Détection du scroll pour déclencher l'animation
+        function onScroll() {
+            const statsSection = document.getElementById('stats');
+            if (statsSection && !statsAnimated) {
+                const rect = statsSection.getBoundingClientRect();
+                if (rect.top <= window.innerHeight * 0.75) {
+                    animateStats();
+                }
+            }
+        }
+
+        window.addEventListener('scroll', onScroll);
+
+        // Load saved language preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'fr';
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (savedLang === 'fr') {
+                buttons[0].classList.add('active');
+                switchLanguage('fr');
+            } else {
+                buttons[1].classList.add('active');
+                switchLanguage('nl');
+            }
+
+            // Vérifier au chargement au cas où la section est visible
+            setTimeout(onScroll, 300);
+        });
+
+        // Carousel functionality - One card at a time
+        let autoScrollInterval;
+        const AUTO_SCROLL_DELAY = 4000; // 4 secondes
+        let currentSlide = 0;
+
+        function getTotalCards() {
+            const carousel = document.getElementById('advantagesCarousel');
+            if (!carousel) return 0;
+            return carousel.querySelectorAll('.advantage-item').length;
+        }
+
+        function scrollCarousel(direction) {
+            const totalCards = getTotalCards();
+
+            if (direction === 'left') {
+                currentSlide = (currentSlide - 1 + totalCards) % totalCards;
+            } else {
+                currentSlide = (currentSlide + 1) % totalCards;
+            }
+
+            updateCarouselPosition();
+
+            // Restart auto-scroll
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        function updateCarouselPosition() {
+            const carousel = document.getElementById('advantagesCarousel');
+            const cardWidth = carousel.offsetWidth;
+            
+            carousel.scrollTo({
+                left: currentSlide * cardWidth,
+                behavior: 'smooth'
+            });
+
+            updateIndicators();
+            updateCarouselButtons();
+        }
+
+        function updateIndicators() {
+            const totalCards = getTotalCards();
+            const indicatorContainer = document.getElementById('carouselIndicator');
+            
+            if (!indicatorContainer) return;
+
+            // Create indicators if they don't exist
+            if (indicatorContainer.children.length === 0) {
+                for (let i = 0; i < totalCards; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'indicator-dot';
+                    if (i === 0) dot.classList.add('active');
+                    dot.onclick = () => goToSlide(i);
+                    indicatorContainer.appendChild(dot);
+                }
+            }
+
+            // Update active indicator
+            const dots = indicatorContainer.querySelectorAll('.indicator-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarouselPosition();
+            clearInterval(autoScrollInterval);
+            startAutoScroll();
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(() => {
+                const totalCards = getTotalCards();
+                currentSlide = (currentSlide + 1) % totalCards;
+                updateCarouselPosition();
+            }, AUTO_SCROLL_DELAY);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Update button states based on current slide
+        function updateCarouselButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Pour une boucle infinie, les boutons ne sont jamais désactivés
+            prevBtn.disabled = false;
+            nextBtn.disabled = false;
+        }
+
+        // Listen to events
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('advantagesCarousel');
+            if (carousel) {
+                carousel.addEventListener('mouseenter', stopAutoScroll);
+                carousel.addEventListener('mouseleave', startAutoScroll);
+                updateIndicators();
+                updateCarouselButtons();
+                startAutoScroll();
+            }
+        });
+    </script>
+</body>
+</html>
