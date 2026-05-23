@@ -54,6 +54,18 @@
             backdrop-filter: blur(10px);
         }
 
+        .language-toggle[style*="position: static"] {
+            position: static !important;
+            top: auto !important;
+            right: auto !important;
+            z-index: auto !important;
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
         .lang-btn {
             background: transparent;
             color: var(--primary);
@@ -947,6 +959,32 @@
             margin-bottom: 0;
         }
 
+        footer .language-toggle {
+            display: flex;
+            gap: 8px;
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+        }
+
+        footer .lang-btn {
+            background: rgba(255,255,255,0.1) !important;
+            color: white !important;
+            border: 2px solid rgba(255,255,255,0.3) !important;
+        }
+
+        footer .lang-btn.active {
+            background: var(--secondary) !important;
+            border-color: var(--secondary) !important;
+        }
+
+        footer .lang-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.2) !important;
+            border-color: rgba(255,255,255,0.5) !important;
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .hero-title {
@@ -979,12 +1017,6 @@
     </style>
 </head>
 <body>
-    <!-- LANGUAGE TOGGLE -->
-    <div class="language-toggle">
-        <button class="lang-btn active" onclick="switchLanguage('fr')">🇫🇷 FR</button>
-        <button class="lang-btn" onclick="switchLanguage('nl')">🇧🇪 NL</button>
-    </div>
-
     <!-- HEADER -->
     <header>
         <div class="logo-container">
@@ -1014,7 +1046,7 @@
         <p class="hero-desc" id="hero-desc">Stille infiltraties, gescheurde pannen, energiebreuk die explodeert... Elke dag die voorbijgaat verergert de schade en verveelvoudigt de kosten.</p>
         <div class="hero-cta">
             <button class="btn btn-primary" id="btn-quote" onclick="document.getElementById('contact').scrollIntoView()">Gratis Offerte</button>
-            <button class="btn btn-secondary" id="btn-phone" onclick="window.location.href='tel:+3221234567'">Bellen</button>
+            <a href="tel:0496998079" class="btn btn-secondary" id="btn-phone">Bellen</a>
         </div>
     </section>
 
@@ -1216,8 +1248,6 @@
                 </div>
             </div>
             <div class="carousel-controls">
-                <button class="carousel-btn" id="prevBtn" onclick="scrollCarousel('left')">❮</button>
-                <button class="carousel-btn" id="nextBtn" onclick="scrollCarousel('right')">❯</button>
             </div>
             <div class="carousel-indicator" id="carouselIndicator"></div>
         </div>
@@ -1230,11 +1260,11 @@
                 <h3 id="contact-title">Neem Contact Op</h3>
                 <div class="contact-item">
                     <label id="contact-phone-label">Telefoon</label>
-                    <p id="contact-phone"><a href="tel:+3221234567" style="color: inherit; text-decoration: none;">+32 (0) 2 123 45 67</a></p>
+                    <p id="contact-phone"><a href="tel:0496998079" style="color: inherit; text-decoration: none;">0496 998 079</a></p>
                 </div>
                 <div class="contact-item">
                     <label id="contact-email-label">E-mail</label>
-                    <p id="contact-email"><a href="mailto:contact@toiture-tradition.be" style="color: inherit; text-decoration: none;">contact@toiture-tradition.be</a></p>
+                    <p id="contact-email"><a href="mailto:toiture-tradition@outlook.com" style="color: inherit; text-decoration: none;">toiture-tradition@outlook.com</a></p>
                 </div>
                 <div class="contact-item">
                     <label id="contact-address-label">Adres</label>
@@ -1276,8 +1306,16 @@
 
     <!-- FOOTER -->
     <footer>
-        <p id="footer-1">&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.</p>
-        <p id="footer-2">Professionele dakdekker - Brussel, Waals Brabant, België</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <p id="footer-1">&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.</p>
+                <p id="footer-2">Professionele dakdekker - Brussel, Waals Brabant, België</p>
+            </div>
+            <div class="language-toggle" style="position: static; margin: 0; background: transparent; padding: 0; box-shadow: none; border-radius: 0;">
+                <button class="lang-btn active" onclick="switchLanguage('fr')">🇫🇷 FR</button>
+                <button class="lang-btn" onclick="switchLanguage('nl')">🇧🇪 NL</button>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -1385,7 +1423,7 @@
                 'adv5-desc': 'Matériaux durables et respect de l\'environnement',
                 'contact-title': 'Nous Contacter',
                 'contact-phone-label': 'Téléphone',
-                'contact-phone': '+32 (0) 2 123 45 67',
+                'contact-phone': '<a href="tel:0496998079" style="color: inherit; text-decoration: none;">0496 998 079</a>',
                 'contact-email-label': 'E-mail',
                 'contact-address-label': 'Adresse',
                 'contact-address': 'Wavre, Brabant Wallon, Belgique',
@@ -1502,7 +1540,7 @@
                 'adv5-desc': 'Duurzame materialen en milieurespect',
                 'contact-title': 'Neem Contact Op',
                 'contact-phone-label': 'Telefoon',
-                'contact-phone': '+32 (0) 2 123 45 67',
+                'contact-phone': '<a href="tel:0496998079" style="color: inherit; text-decoration: none;">0496 998 079</a>',
                 'contact-email-label': 'E-mail',
                 'contact-address-label': 'Adres',
                 'contact-address': 'Wavre, Brabant Wallon, België',
@@ -1554,7 +1592,7 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            const mailtoLink = `mailto:contact@toiture-tradition.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:toiture-tradition@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`)}`;
             window.location.href = mailtoLink;
         }
 
@@ -1717,12 +1755,7 @@
 
         // Update button states based on current slide
         function updateCarouselButtons() {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-
-            // Pour une boucle infinie, les boutons ne sont jamais désactivés
-            prevBtn.disabled = false;
-            nextBtn.disabled = false;
+            // Boutons supprimés - fonction vide
         }
 
         // Listen to events
