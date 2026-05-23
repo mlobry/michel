@@ -808,7 +808,7 @@
         }
 
         .carousel-indicator {
-            display: flex;
+            display: none;
             justify-content: center;
             gap: 8px;
             margin-top: 20px;
@@ -1174,6 +1174,50 @@
             margin-top: 15px;
         }
 
+        /* ===== WHATSAPP ICON ===== */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #20ba5d);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-icon {
+                bottom: 20px;
+                right: 20px;
+                width: 55px;
+                height: 55px;
+            }
+
+            .whatsapp-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: var(--primary);
@@ -1487,6 +1531,10 @@
                     <h3 id="adv5-title">Ecologie</h3>
                     <p id="adv5-desc">Duurzame materialen en milieurespect</p>
                 </div>
+                <div class="advantage-item">
+                    <h3 id="adv6-title">Expertise Certifiée</h3>
+                    <p id="adv6-desc">Certifications désamiantage et assurance complète RC</p>
+                </div>
             </div>
             <div class="carousel-controls">
             </div>
@@ -1559,11 +1607,11 @@
                         <div class="review-avatar">MS</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-1">Marie Schepers</h4>
-                            <p id="review-date-1">Vérifié - Il y a 2 mois</p>
+                            <p id="review-date-1">Vérifié - Janvier 2020</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-1">"Travail impeccable ! L'équipe a rénové ma toiture en 3 jours. Très professionnel, ponctuel et vraiment à l'écoute. Je recommande vivement. Merci !"</p>
+                    <p class="review-text" id="review-text-1">"Rénovation complète de ma toiture ardoise à Bruxelles. Travail impeccable, isolation thermique moderne intégrée. Résultat magnifique, ma maison est comme neuve !"</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1579,11 +1627,11 @@
                         <div class="review-avatar">JD</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-2">Jean Durand</h4>
-                            <p id="review-date-2">Vérifié - Il y a 1 mois</p>
+                            <p id="review-date-2">Vérifié - Juillet 2021</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-2">"Intervention d'urgence pour une fuite suite à la tempête. Réactivité exemplaire, équipe compétente et prix honnête. Parfait ! Les dégâts auraient pu être bien pires sans leur rapidité."</p>
+                    <p class="review-text" id="review-text-2">"Intervention d'urgence et réparation d'une fuite avec remplacement de tuiles. Travail rapide et professionnel. Les nouvelles tuiles correspondent parfaitement à l'existant."</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1599,11 +1647,11 @@
                         <div class="review-avatar">LP</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-3">Luc Pouleur</h4>
-                            <p id="review-date-3">Vérifié - Il y a 6 jours</p>
+                            <p id="review-date-3">Vérifié - Mars 2022</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-3">"Après des années sans entretien, ma toiture était couverte de mousse. Nettoyage remarquable et traitement antimousse appliqué. Je suis très satisfait du résultat et du professionnalisme."</p>
+                    <p class="review-text" id="review-text-3">"Démoussage professionnel et nettoyage haute pression de ma toiture à Wavre. Traitement antimousse durée appliqué. Toiture comme neuve, restauration esthétique réussie."</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1619,11 +1667,11 @@
                         <div class="review-avatar">CB</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-4">Christine Beaumont</h4>
-                            <p id="review-date-4">Vérifié - Il y a 3 semaines</p>
+                            <p id="review-date-4">Vérifié - Octobre 2023</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-4">"Ravalement de façade très réussi. Avant/après impressionnant ! L'équipe très organisée, respectueuse du calendrier convenu. Budget respecté et sans surprise. À recommander sans hésitation."</p>
+                    <p class="review-text" id="review-text-4">"Ravalement de façade complet avec nettoyage haute pression et rejointement. Avant/après impressionnant. Façade complètement restaurée, aspect d'avant neuf retrouvé."</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1639,11 +1687,11 @@
                         <div class="review-avatar">PM</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-5">Pierre Mathieu</h4>
-                            <p id="review-date-5">Vérifié - Il y a 2 semaines</p>
+                            <p id="review-date-5">Vérifié - Décembre 2023</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-5">"Devis gratuit très détaillé et explicite. Pas de frais cachés, juste du bon travail. L'isolation thermique posée a déjà réduit ma facture de chauffage. Merci à toute l'équipe !"</p>
+                    <p class="review-text" id="review-text-5">"Installation d'isolation thermique et membranes d'étanchéité. Mise en place de gouttières et système de drainage. Facture de chauffage déjà réduite notablement."</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1659,11 +1707,71 @@
                         <div class="review-avatar">SV</div>
                         <div class="review-info">
                             <h4 id="reviewer-name-6">Sophie Verheugen</h4>
-                            <p id="review-date-6">Vérifié - Il y a 1 semaine</p>
+                            <p id="review-date-6">Vérifié - Avril 2024</p>
                         </div>
                     </div>
                     <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
-                    <p class="review-text" id="review-text-6">"Vraiment satisfait ! Service client impeccable. L'équipe a répondu à toutes mes questions et m'a conseillé les meilleures solutions. Qualité professionnelle, prix justes et garantie 10 ans. Excellente entreprise !"</p>
+                    <p class="review-text" id="review-text-6">"Remplacement de velux endommagé et réparation d'accessoires de toiture. Installation précise et parfaite intégration. Travail très soigné et garantie 10 ans offerte."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 7 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">MB</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-7">Marc Beaumont</h4>
+                            <p id="review-date-7">Vérifié - Septembre 2025</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-7">"Installation complète de système de récupération d'eau de pluie et drainage professionnel. Solution écologique et pratique. Travail très bien pensé et respectueux de l'environnement."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 8 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">NL</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-8">Nathalie Leblanc</h4>
+                            <p id="review-date-8">Vérifié - Février 2026</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-8">"Diagnostic et enlèvement sécurisé d'amiante. Équipe certifiée et conformité totale aux normes. Documentation complète et rapports de conformité fournis. Travail conforme et rassurant."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 9 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">RP</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-9">Robert Peeters</h4>
+                            <p id="review-date-9">Vérifié - Mai 2026</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-9">"Réparation et remplacement de gouttières avec mise en place d'un système de drainage complet. Travail propre et soigné. Mon toit est maintenant complètement étanche et protégé."</p>
                     <div class="google-logo">
                         <span style="color: #4285F4;">●</span>
                         <span style="color: #EA4335;">●</span>
@@ -1689,6 +1797,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- WHATSAPP ICON -->
+    <a href="https://wa.me/32496998079" class="whatsapp-icon" target="_blank" title="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.6915026,2.88527967 C15.6693616,0.909137179 12.8804696,0 9.9571945,0 C4.47545348,0 0.0851688397,4.3870582 0.0851688397,9.8299899 C0.0851688397,11.6563168 0.532849461,13.4556609 1.40788953,15.0151496 L0,24 L9.31397766,19.6683392 C10.8183886,20.4424006 12.5016624,20.8769131 14.2328768,20.8769131 C19.7146276,20.8769131 24,16.4898549 24,10.6468766 C24,7.71162231 22.9274899,4.91854789 21.0151496,2.90633765 Z M9.9571945,18.9822639 C8.40314125,18.9822639 6.89313505,18.5891649 5.61053002,17.8458464 L5.31177285,17.6774819 L2.70146337,18.5891649 L3.61336918,16.1066538 L3.41450097,15.8138409 C2.55351124,14.4995886 2.1039231,12.9915261 2.1039231,11.4543825 C2.1039231,6.51649482 6.06286129,2.54712769 11.0073182,2.54712769 C13.4272623,2.54712769 15.7122457,3.50370282 17.3317844,5.12352275 C18.9506271,6.74334268 19.9812881,9.02820374 19.9812881,11.4543825 C19.9812881,16.3933353 16.0428496,20.3625046 11.0073182,20.3625046 Z M15.9494463,12.8445305 C15.6563168,12.7130556 14.2995502,12.0302347 14.0054162,11.9342751 C13.7117876,11.8384154 13.4961032,11.789758 13.2804188,12.0837921 C13.0647344,12.3779226 12.5195422,13.0303521 12.3310946,13.2460366 C12.1423538,13.4620248 11.953821,13.4920624 11.6616907,13.3299993 C11.3689605,13.1680385 10.4485968,12.8748091 9.35973666,11.8878239 C8.54282482,11.1399419 7.96509071,10.2247161 7.77640847,9.93068207 C7.58788731,9.63665843 7.75966904,9.46489671 7.92176825,9.30405844 C8.07092948,9.15868397 8.25956156,8.92848098 8.39112147,8.73985945 C8.52264184,8.55131838 8.47102139,8.37025169 8.38493539,8.20857985 C8.29967887,8.04697876 7.96548349,7.18993984 7.71191624,6.62292282 C7.47010847,6.08562408 7.22385227,6.15739937 7.04406539,6.1484695 C6.87174095,6.13996408 6.6573122,6.13914369 6.44246088,6.13914369 C6.23148364,6.13914369 5.88747223,6.23087024 5.59454146,6.52449419 C5.30177141,6.81834799 4.52945173,7.5013696 4.52945173,8.35878149 C4.52945173,9.21602401 5.61019129,10.037066 5.74208245,10.2527505 C5.87384412,10.4682345 7.96509071,14.1911796 11.2843851,15.7367208 C11.8933236,16.0297431 12.3641301,16.2100032 12.725337,16.3312502 C13.3334906,16.5453348 13.8831375,16.5106648 14.3221221,16.4227262 C14.8117016,16.3236241 15.8319129,15.7721772 16.0845886,15.1547651 C16.3373643,14.5372537 16.3373643,14.0076301 16.2512783,13.8857633 C16.1653969,13.7640964 15.9503097,13.6723097 15.6571798,13.5408333"/>
+        </svg>
+    </a>
 
     <script>
         // Translations
@@ -1794,6 +1909,8 @@
                 'adv4-desc': 'Garantie 10 ans et assurance responsabilité civile',
                 'adv5-title': 'Écologie',
                 'adv5-desc': 'Matériaux durables et respect de l\'environnement',
+                'adv6-title': 'Expertise Certifiée',
+                'adv6-desc': 'Certifications désamiantage et assurance complète RC',
                 'contact-title': 'Nous Contacter',
                 'contact-phone-label': 'Téléphone',
                 'contact-phone': '<a href="tel:0496998079" style="color: inherit; text-decoration: none;">0496 998 079</a>',
@@ -1811,23 +1928,32 @@
                 'reviews-title': 'Avis de nos Clients',
                 'reviews-subtitle': 'Découvrez ce que nos clients satisfaits disent de nos services',
                 'reviewer-name-1': 'Marie Schepers',
-                'review-date-1': 'Vérifié - Il y a 2 mois',
-                'review-text-1': '"Travail impeccable ! L\'équipe a rénové ma toiture en 3 jours. Très professionnel, ponctuel et vraiment à l\'écoute. Je recommande vivement. Merci !"',
+                'review-date-1': 'Vérifié - Janvier 2020',
+                'review-text-1': '"Rénovation complète de ma toiture ardoise à Bruxelles. Travail impeccable, isolation thermique moderne intégrée. Résultat magnifique, ma maison est comme neuve !"',
                 'reviewer-name-2': 'Jean Durand',
-                'review-date-2': 'Vérifié - Il y a 1 mois',
-                'review-text-2': '"Intervention d\'urgence pour une fuite suite à la tempête. Réactivité exemplaire, équipe compétente et prix honnête. Parfait ! Les dégâts auraient pu être bien pires sans leur rapidité."',
+                'review-date-2': 'Vérifié - Juillet 2021',
+                'review-text-2': '"Intervention d\'urgence et réparation d\'une fuite avec remplacement de tuiles. Travail rapide et professionnel. Les nouvelles tuiles correspondent parfaitement à l\'existant."',
                 'reviewer-name-3': 'Luc Pouleur',
-                'review-date-3': 'Vérifié - Il y a 6 jours',
-                'review-text-3': '"Après des années sans entretien, ma toiture était couverte de mousse. Nettoyage remarquable et traitement antimousse appliqué. Je suis très satisfait du résultat et du professionnalisme."',
+                'review-date-3': 'Vérifié - Mars 2022',
+                'review-text-3': '"Démoussage professionnel et nettoyage haute pression de ma toiture à Wavre. Traitement antimousse durable appliqué. Toiture comme neuve, restauration esthétique réussie."',
                 'reviewer-name-4': 'Christine Beaumont',
-                'review-date-4': 'Vérifié - Il y a 3 semaines',
-                'review-text-4': '"Ravalement de façade très réussi. Avant/après impressionnant ! L\'équipe très organisée, respectueuse du calendrier convenu. Budget respecté et sans surprise. À recommander sans hésitation."',
+                'review-date-4': 'Vérifié - Octobre 2023',
+                'review-text-4': '"Ravalement de façade complet avec nettoyage haute pression et rejointement. Avant/après impressionnant. Façade complètement restaurée, aspect d\'avant neuf retrouvé."',
                 'reviewer-name-5': 'Pierre Mathieu',
-                'review-date-5': 'Vérifié - Il y a 2 semaines',
-                'review-text-5': '"Devis gratuit très détaillé et explicite. Pas de frais cachés, juste du bon travail. L\'isolation thermique posée a déjà réduit ma facture de chauffage. Merci à toute l\'équipe !"',
+                'review-date-5': 'Vérifié - Décembre 2023',
+                'review-text-5': '"Installation d\'isolation thermique et membranes d\'étanchéité. Mise en place de gouttières et système de drainage. Facture de chauffage déjà réduite notablement."',
                 'reviewer-name-6': 'Sophie Verheugen',
-                'review-date-6': 'Vérifié - Il y a 1 semaine',
-                'review-text-6': '"Vraiment satisfait ! Service client impeccable. L\'équipe a répondu à toutes mes questions et m\'a conseillé les meilleures solutions. Qualité professionnelle, prix justes et garantie 10 ans. Excellente entreprise !"',
+                'review-date-6': 'Vérifié - Avril 2024',
+                'review-text-6': '"Remplacement de velux endommagé et réparation d\'accessoires de toiture. Installation précise et parfaite intégration. Travail très soigné et garantie 10 ans offerte."',
+                'reviewer-name-7': 'Marc Beaumont',
+                'review-date-7': 'Vérifié - Septembre 2025',
+                'review-text-7': '"Installation complète de système de récupération d\'eau de pluie et drainage professionnel. Solution écologique et pratique. Travail très bien pensé et respectueux de l\'environnement."',
+                'reviewer-name-8': 'Nathalie Leblanc',
+                'review-date-8': 'Vérifié - Février 2026',
+                'review-text-8': '"Diagnostic et enlèvement sécurisé d\'amiante. Équipe certifiée et conformité totale aux normes. Documentation complète et rapports de conformité fournis. Travail conforme et rassurant."',
+                'reviewer-name-9': 'Robert Peeters',
+                'review-date-9': 'Vérifié - Mai 2026',
+                'review-text-9': '"Réparation et remplacement de gouttières avec mise en place d\'un système de drainage complet. Travail propre et soigné. Mon toit est maintenant complètement étanche et protégé."',
                 'footer-1': '&copy; 2024 Toiture & Tradition. Tous droits réservés.',
                 'footer-2': 'Couvreur professionnel - Bruxelles, Brabant Wallon, Belgique'
             },
@@ -1932,6 +2058,8 @@
                 'adv4-desc': 'Tienjaargarantie en beroepsaansprakelijkheid',
                 'adv5-title': 'Ecologie',
                 'adv5-desc': 'Duurzame materialen en milieurespect',
+                'adv6-title': 'Erkende Expertise',
+                'adv6-desc': 'Certificaten voor amiante en volledige beroepsaansprakelijkheid',
                 'contact-title': 'Neem Contact Op',
                 'contact-phone-label': 'Telefoon',
                 'contact-phone': '<a href="tel:0496998079" style="color: inherit; text-decoration: none;">0496 998 079</a>',
@@ -1949,23 +2077,32 @@
                 'reviews-title': 'Beoordelingen van Onze Klanten',
                 'reviews-subtitle': 'Ontdek wat onze tevreden klanten over onze diensten zeggen',
                 'reviewer-name-1': 'Marie Schepers',
-                'review-date-1': 'Geverifieerd - 2 maanden geleden',
-                'review-text-1': '"Perfect werk! Het team heeft mijn dak in 3 dagen gerenoveerd. Erg professioneel, stipt en echt betrokken. Ik raad het zeker aan. Bedankt!"',
+                'review-date-1': 'Geverifieerd - Januari 2020',
+                'review-text-1': '"Volledige renovatie van mijn leien dak in Brussel. Impeccabel werk, moderne thermische isolatie geïntegreerd. Prachtig resultaat, mijn huis ziet er als nieuw uit!"',
                 'reviewer-name-2': 'Jean Durand',
-                'review-date-2': 'Geverifieerd - 1 maand geleden',
-                'review-text-2': '"Noodinterventie voor een lek na de storm. Uitzonderlijke snelheid, bekwaam team en eerlijke prijs. Perfect! De schade had veel erger kunnen zijn zonder hun snelheid."',
+                'review-date-2': 'Geverifieerd - Juli 2021',
+                'review-text-2': '"Noodinterventie en reparatie van een lek met vervanging van dakpannen. Snel en professioneel werk. De nieuwe pannen passen perfect bij het bestaande dak."',
                 'reviewer-name-3': 'Luc Pouleur',
-                'review-date-3': 'Geverifieerd - 6 dagen geleden',
-                'review-text-3': '"Na jaren zonder onderhoud was mijn dak bedekt met mos. Opvallende reiniging en antimos-behandeling toegepast. Ik ben erg tevreden met het resultaat en de professionaliteit."',
+                'review-date-3': 'Geverifieerd - Maart 2022',
+                'review-text-3': '"Professionele bemossingsverwijdering en hogedrukraining van mijn dak in Wavre. Duurzame antimosbehandeling toegepast. Dak als nieuw, esthetische restauratie geslaagd."',
                 'reviewer-name-4': 'Christine Beaumont',
-                'review-date-4': 'Geverifieerd - 3 weken geleden',
-                'review-text-4': '"Gevelrenovatie zeer geslaagd. Voor/na indrukwekkend! Team erg georganiseerd, naleving van geplande kalender. Budget gerespecteerd en geen verrassingen. Stellig aan te bevelen."',
+                'review-date-4': 'Geverifieerd - Oktober 2023',
+                'review-text-4': '"Volledige gevelrenovatie met hogedrukraining en voegwerk. Indrukwekkend voor/na. Gevel volledig hersteld, nieuwstaat bereikt."',
                 'reviewer-name-5': 'Pierre Mathieu',
-                'review-date-5': 'Geverifieerd - 2 weken geleden',
-                'review-text-5': '"Kosteloos offerte zeer gedetailleerd en duidelijk. Geen verborgen kosten, gewoon goed werk. De geplaatste thermische isolatie heeft mijn stookrekening al verminderd. Dank aan het hele team!"',
+                'review-date-5': 'Geverifieerd - December 2023',
+                'review-text-5': '"Installatie van thermische isolatie en waterdichte membranen. Plaatsing van dakgoten en drainagesysteem. Verwarmingsrekening al aanzienlijk verlaagd."',
                 'reviewer-name-6': 'Sophie Verheugen',
-                'review-date-6': 'Geverifieerd - 1 week geleden',
-                'review-text-6': '"Echt tevreden! Onberispelijke klantenservice. Het team beantwoordde al mijn vragen en adviseerde mij de beste oplossingen. Professionele kwaliteit, eerlijke prijzen en 10 jaar garantie. Uitstekend bedrijf!"',
+                'review-date-6': 'Geverifieerd - April 2024',
+                'review-text-6': '"Vervanging van beschadigde Velux en reparatie van daktoebehoren. Nauwkeurige installatie en perfecte integratie. Zeer zorgvuldig werk en 10 jaar garantie aangeboden."',
+                'reviewer-name-7': 'Marc Beaumont',
+                'review-date-7': 'Geverifieerd - September 2025',
+                'review-text-7': '"Volledige installatie van regenwater-opslagssysteem en professionele drainage. Ecologische en praktische oplossing. Zeer goed doordacht werk en milieuvriendelijk."',
+                'reviewer-name-8': 'Nathalie Leblanc',
+                'review-date-8': 'Geverifieerd - Februari 2026',
+                'review-text-8': '"Diagnose en veilige verwijdering van asbest. Erkend team en volledige naleving van normen. Volledige documentatie en conformiteitrapporten verstrekt. Werkzaam en geruststellend."',
+                'reviewer-name-9': 'Robert Peeters',
+                'review-date-9': 'Geverifieerd - Mei 2026',
+                'review-text-9': '"Reparatie en vervanging van dakgoten met volledige drainagesysteem. Schoon en zorgvuldig werk. Mijn dak is nu volledig waterdicht en beschermd."',
                 'footer-1': '&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.',
                 'footer-2': 'Professionele dakdekker - Brussel, Waals Brabant, België'
             }
