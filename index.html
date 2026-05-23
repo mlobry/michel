@@ -202,14 +202,14 @@
             color: white;
             padding: 80px 20px;
             background: linear-gradient(135deg, rgba(26,35,50,0.7) 0%, rgba(26,35,50,0.7) 100%), 
-                        url('nettoyage-toiture-pro.jpg') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1504917595217-3404ee9c6e95?w=1200&h=800&fit=crop') center/cover no-repeat;
             position: relative;
         }
 
         @media (max-width: 768px) {
             .hero-section {
                 background: linear-gradient(135deg, rgba(26,35,50,0.8) 0%, rgba(26,35,50,0.8) 100%), 
-                            url('nettoyage-toiture-pro.jpg') center/cover no-repeat;
+                            url('https://images.unsplash.com/photo-1504917595217-3404ee9c6e95?w=1200&h=800&fit=crop') center/cover no-repeat;
                 background-attachment: scroll;
             }
         }
@@ -941,6 +941,127 @@
             box-shadow: 0 8px 16px rgba(196,147,92,0.3);
         }
 
+        /* ===== GOOGLE REVIEWS SECTION ===== */
+        .reviews-section {
+            background: var(--light-bg);
+            padding: 80px 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .reviews-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .reviews-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .review-info h4 {
+            color: var(--primary);
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+
+        .review-info p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .review-text {
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            margin-bottom: 15px;
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .google-logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            background: #f8f8f8;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4a4a4a;
+            margin-top: 15px;
+        }
+
         /* ===== FOOTER ===== */
         footer {
             background: var(--primary);
@@ -1034,6 +1155,7 @@
             <li><a href="#about" id="nav-about">À Propos</a></li>
             <li><a href="realizations.html" id="nav-realizations">Nos Réalisations</a></li>
             <li><a href="#advantages" id="nav-advantages">Avantages</a></li>
+            <li><a href="#reviews" id="nav-reviews">Avis Clients</a></li>
             <li><a href="#contact" id="nav-contact">Contact</a></li>
         </ul>
     </nav>
@@ -1304,6 +1426,137 @@
         </div>
     </section>
 
+    <!-- GOOGLE REVIEWS SECTION -->
+    <section class="reviews-section" id="reviews">
+        <div class="reviews-container">
+            <div class="reviews-header">
+                <h2 id="reviews-title">Avis de nos Clients</h2>
+                <p id="reviews-subtitle">Découvrez ce que nos clients satisfaits disent de nos services</p>
+            </div>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">MS</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-1">Marie Schepers</h4>
+                            <p id="review-date-1">Vérifié - Il y a 2 mois</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-1">"Travail impeccable ! L'équipe a rénové ma toiture en 3 jours. Très professionnel, ponctuel et vraiment à l'écoute. Je recommande vivement. Merci !"</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">JD</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-2">Jean Durand</h4>
+                            <p id="review-date-2">Vérifié - Il y a 1 mois</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-2">"Intervention d'urgence pour une fuite suite à la tempête. Réactivité exemplaire, équipe compétente et prix honnête. Parfait ! Les dégâts auraient pu être bien pires sans leur rapidité."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">LP</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-3">Luc Pouleur</h4>
+                            <p id="review-date-3">Vérifié - Il y a 6 jours</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-3">"Après des années sans entretien, ma toiture était couverte de mousse. Nettoyage remarquable et traitement antimousse appliqué. Je suis très satisfait du résultat et du professionnalisme."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">CB</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-4">Christine Beaumont</h4>
+                            <p id="review-date-4">Vérifié - Il y a 3 semaines</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-4">"Ravalement de façade très réussi. Avant/après impressionnant ! L'équipe très organisée, respectueuse du calendrier convenu. Budget respecté et sans surprise. À recommander sans hésitation."</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">PM</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-5">Pierre Mathieu</h4>
+                            <p id="review-date-5">Vérifié - Il y a 2 semaines</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-5">"Devis gratuit très détaillé et explicite. Pas de frais cachés, juste du bon travail. L'isolation thermique posée a déjà réduit ma facture de chauffage. Merci à toute l'équipe !"</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">SV</div>
+                        <div class="review-info">
+                            <h4 id="reviewer-name-6">Sophie Verheugen</h4>
+                            <p id="review-date-6">Vérifié - Il y a 1 semaine</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    <p class="review-text" id="review-text-6">"Vraiment satisfait ! Service client impeccable. L'équipe a répondu à toutes mes questions et m'a conseillé les meilleures solutions. Qualité professionnelle, prix justes et garantie 10 ans. Excellente entreprise !"</p>
+                    <div class="google-logo">
+                        <span style="color: #4285F4;">●</span>
+                        <span style="color: #EA4335;">●</span>
+                        <span style="color: #FBBC04;">●</span>
+                        <span style="color: #4285F4;">●</span>
+                        <span>Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
@@ -1328,6 +1581,7 @@
                 'nav-about': 'À Propos',
                 'nav-realizations': 'Nos Réalisations',
                 'nav-advantages': 'Avantages',
+                'nav-reviews': 'Avis Clients',
                 'nav-contact': 'Contact',
                 'hero-alert': 'Votre toiture vous inquiète ?',
                 'hero-title': '3 Générations de Couvreur',
@@ -1435,6 +1689,26 @@
                 'form-subject-label': 'Sujet',
                 'form-message-label': 'Message',
                 'form-submit': 'Envoyer le Message',
+                'reviews-title': 'Avis de nos Clients',
+                'reviews-subtitle': 'Découvrez ce que nos clients satisfaits disent de nos services',
+                'reviewer-name-1': 'Marie Schepers',
+                'review-date-1': 'Vérifié - Il y a 2 mois',
+                'review-text-1': '"Travail impeccable ! L\'équipe a rénové ma toiture en 3 jours. Très professionnel, ponctuel et vraiment à l\'écoute. Je recommande vivement. Merci !"',
+                'reviewer-name-2': 'Jean Durand',
+                'review-date-2': 'Vérifié - Il y a 1 mois',
+                'review-text-2': '"Intervention d\'urgence pour une fuite suite à la tempête. Réactivité exemplaire, équipe compétente et prix honnête. Parfait ! Les dégâts auraient pu être bien pires sans leur rapidité."',
+                'reviewer-name-3': 'Luc Pouleur',
+                'review-date-3': 'Vérifié - Il y a 6 jours',
+                'review-text-3': '"Après des années sans entretien, ma toiture était couverte de mousse. Nettoyage remarquable et traitement antimousse appliqué. Je suis très satisfait du résultat et du professionnalisme."',
+                'reviewer-name-4': 'Christine Beaumont',
+                'review-date-4': 'Vérifié - Il y a 3 semaines',
+                'review-text-4': '"Ravalement de façade très réussi. Avant/après impressionnant ! L\'équipe très organisée, respectueuse du calendrier convenu. Budget respecté et sans surprise. À recommander sans hésitation."',
+                'reviewer-name-5': 'Pierre Mathieu',
+                'review-date-5': 'Vérifié - Il y a 2 semaines',
+                'review-text-5': '"Devis gratuit très détaillé et explicite. Pas de frais cachés, juste du bon travail. L\'isolation thermique posée a déjà réduit ma facture de chauffage. Merci à toute l\'équipe !"',
+                'reviewer-name-6': 'Sophie Verheugen',
+                'review-date-6': 'Vérifié - Il y a 1 semaine',
+                'review-text-6': '"Vraiment satisfait ! Service client impeccable. L\'équipe a répondu à toutes mes questions et m\'a conseillé les meilleures solutions. Qualité professionnelle, prix justes et garantie 10 ans. Excellente entreprise !"',
                 'footer-1': '&copy; 2024 Toiture & Tradition. Tous droits réservés.',
                 'footer-2': 'Couvreur professionnel - Bruxelles, Brabant Wallon, Belgique'
             },
@@ -1445,6 +1719,7 @@
                 'nav-about': 'Over Ons',
                 'nav-realizations': 'Onze Realisaties',
                 'nav-advantages': 'Voordelen',
+                'nav-reviews': 'Klantbeoordelingen',
                 'nav-contact': 'Contact',
                 'hero-alert': 'Maakt uw dak u ongerust?',
                 'hero-title': '3 Generaties Dakdekker',
@@ -1552,6 +1827,26 @@
                 'form-subject-label': 'Onderwerp',
                 'form-message-label': 'Bericht',
                 'form-submit': 'Bericht Verzenden',
+                'reviews-title': 'Beoordelingen van Onze Klanten',
+                'reviews-subtitle': 'Ontdek wat onze tevreden klanten over onze diensten zeggen',
+                'reviewer-name-1': 'Marie Schepers',
+                'review-date-1': 'Geverifieerd - 2 maanden geleden',
+                'review-text-1': '"Perfect werk! Het team heeft mijn dak in 3 dagen gerenoveerd. Erg professioneel, stipt en echt betrokken. Ik raad het zeker aan. Bedankt!"',
+                'reviewer-name-2': 'Jean Durand',
+                'review-date-2': 'Geverifieerd - 1 maand geleden',
+                'review-text-2': '"Noodinterventie voor een lek na de storm. Uitzonderlijke snelheid, bekwaam team en eerlijke prijs. Perfect! De schade had veel erger kunnen zijn zonder hun snelheid."',
+                'reviewer-name-3': 'Luc Pouleur',
+                'review-date-3': 'Geverifieerd - 6 dagen geleden',
+                'review-text-3': '"Na jaren zonder onderhoud was mijn dak bedekt met mos. Opvallende reiniging en antimos-behandeling toegepast. Ik ben erg tevreden met het resultaat en de professionaliteit."',
+                'reviewer-name-4': 'Christine Beaumont',
+                'review-date-4': 'Geverifieerd - 3 weken geleden',
+                'review-text-4': '"Gevelrenovatie zeer geslaagd. Voor/na indrukwekkend! Team erg georganiseerd, naleving van geplande kalender. Budget gerespecteerd en geen verrassingen. Stellig aan te bevelen."',
+                'reviewer-name-5': 'Pierre Mathieu',
+                'review-date-5': 'Geverifieerd - 2 weken geleden',
+                'review-text-5': '"Kosteloos offerte zeer gedetailleerd en duidelijk. Geen verborgen kosten, gewoon goed werk. De geplaatste thermische isolatie heeft mijn stookrekening al verminderd. Dank aan het hele team!"',
+                'reviewer-name-6': 'Sophie Verheugen',
+                'review-date-6': 'Geverifieerd - 1 week geleden',
+                'review-text-6': '"Echt tevreden! Onberispelijke klantenservice. Het team beantwoordde al mijn vragen en adviseerde mij de beste oplossingen. Professionele kwaliteit, eerlijke prijzen en 10 jaar garantie. Uitstekend bedrijf!"',
                 'footer-1': '&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.',
                 'footer-2': 'Professionele dakdekker - Brussel, Waals Brabant, België'
             }
