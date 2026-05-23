@@ -351,7 +351,27 @@
             font-weight: 600;
             margin-bottom: 30px;
             letter-spacing: 0.5px;
-            animation: pulse 2s ease-in-out infinite;
+            animation: blink 1.5s ease-in-out infinite;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(210, 50, 50, 0.3);
+            text-decoration: none;
+        }
+
+        .hero-alert:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(210, 50, 50, 0.5);
+        }
+
+        @keyframes blink {
+            0%, 100% { 
+                opacity: 1;
+                box-shadow: 0 4px 15px rgba(210, 50, 50, 0.3);
+            }
+            50% { 
+                opacity: 0.5;
+                box-shadow: 0 4px 15px rgba(210, 50, 50, 0.7);
+            }
         }
 
         @keyframes pulse {
@@ -1325,7 +1345,7 @@
 
     <!-- HERO SECTION -->
     <section class="hero-section">
-        <div class="hero-alert" id="hero-alert">Maakt uw dak u ongerust?</div>
+        <a href="tel:0496998079" class="hero-alert" id="hero-alert">Maakt uw dak u ongerust?</a>
         <h2 class="hero-title" id="hero-title">3 Generaties Expertise</h2>
         <p class="hero-subtitle" id="hero-subtitle">Om uw huis definitief te beschermen</p>
         <p class="hero-desc" id="hero-desc">Stille infiltraties, gescheurde pannen, energiebreuk die explodeert... Elke dag die voorbijgaat verergert de schade en verveelvoudigt de kosten.</p>
