@@ -130,44 +130,88 @@
             text-transform: uppercase;
         }
 
-        nav {
-            position: sticky;
-            top: 0;
+        /* ===== HAMBURGER MENU ===== */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
             background: white;
-            padding: 0;
-            z-index: 99;
-            border-bottom: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .hamburger-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 35, 50, 0.98);
             backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
+            z-index: 1000;
+            transition: left 0.3s ease;
+            padding-top: 80px;
+        }
+
+        nav.active {
+            left: 0;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
             gap: 0;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
             padding: 0;
         }
 
         nav li {
-            border-right: 1px solid var(--border-color);
+            border-right: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         nav li:last-child {
             border-right: none;
+            border-bottom: none;
         }
 
         nav a {
-            color: var(--text-dark);
+            color: white;
             text-decoration: none;
-            padding: 18px 25px;
+            padding: 20px 30px;
             display: block;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             letter-spacing: 0.5px;
             position: relative;
         }
@@ -176,7 +220,7 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 30px;
             width: 0;
             height: 2px;
             background: var(--secondary);
@@ -185,10 +229,76 @@
 
         nav a:hover {
             color: var(--secondary);
+            background: rgba(255,255,255,0.05);
         }
 
         nav a:hover::after {
-            width: 100%;
+            width: calc(100% - 60px);
+        }
+
+        /* Media query pour afficher le hamburger menu */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: flex;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hamburger-menu {
+                display: none;
+            }
+
+            nav {
+                position: sticky !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                background: white !important;
+                backdrop-filter: blur(10px) !important;
+                background: rgba(255,255,255,0.95) !important;
+                z-index: 99 !important;
+                border-bottom: 1px solid var(--border-color) !important;
+                padding-top: 0 !important;
+                transition: none !important;
+            }
+
+            nav.active {
+                left: 0 !important;
+            }
+
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                gap: 0;
+            }
+
+            nav li {
+                border-right: 1px solid var(--border-color);
+            }
+
+            nav li:last-child {
+                border-right: none;
+            }
+
+            nav a {
+                color: var(--text-dark);
+                padding: 18px 25px;
+                font-size: 0.95rem;
+            }
+
+            nav a:hover {
+                color: var(--secondary);
+                background: transparent;
+            }
+
+            nav a::after {
+                left: 0;
+            }
+
+            nav a:hover::after {
+                width: 100%;
+            }
         }
 
         /* ===== HERO SECTION ===== */
@@ -1150,8 +1260,15 @@
         </div>
     </header>
 
+    <!-- HAMBURGER MENU BUTTON -->
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
     <!-- NAVIGATION -->
-    <nav>
+    <nav id="navMenu">
         <ul>
             <li><a href="#services" id="nav-services">Services</a></li>
             <li><a href="#about" id="nav-about">À Propos</a></li>
@@ -1961,6 +2078,33 @@
 
             // Vérifier au chargement au cas où la section est visible
             setTimeout(onScroll, 300);
+        });
+
+        // Hamburger Menu functionality
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = navMenu.querySelectorAll('a');
+
+        // Toggle menu on hamburger click
+        hamburgerMenu.addEventListener('click', function() {
+            hamburgerMenu.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('nav') && !event.target.closest('.hamburger-menu')) {
+                hamburgerMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
         });
 
         // Carousel functionality - One card at a time
