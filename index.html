@@ -341,6 +341,17 @@
             pointer-events: none;
         }
 
+        @keyframes cascadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .hero-alert {
             background: var(--accent);
             color: white;
@@ -351,7 +362,7 @@
             font-weight: 600;
             margin-bottom: 30px;
             letter-spacing: 0.5px;
-            animation: blink 1.5s ease-in-out infinite;
+            animation: cascadeDown 0.7s ease-out 0.1s both, blink 1.5s ease-in-out 0.8s infinite;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(210, 50, 50, 0.3);
@@ -386,6 +397,7 @@
             margin-bottom: 20px;
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: cascadeDown 0.7s ease-out 0.2s both;
         }
 
         .hero-subtitle {
@@ -393,6 +405,7 @@
             margin-bottom: 15px;
             font-weight: 300;
             color: rgba(255,255,255,0.95);
+            animation: cascadeDown 0.7s ease-out 0.3s both;
         }
 
         .hero-desc {
@@ -401,6 +414,7 @@
             max-width: 600px;
             color: rgba(255,255,255,0.85);
             line-height: 1.8;
+            animation: cascadeDown 0.7s ease-out 0.4s both;
         }
 
         .hero-cta {
@@ -1371,6 +1385,7 @@
         </div>
     </section>
 
+    
     <!-- SERVICES SECTION -->
     <section class="services-section" id="services">
         <h2 class="section-title" id="services-title">Onze Diensten</h2>
@@ -2263,6 +2278,8 @@
                 navMenu.classList.remove('active');
             }
         });
+
+        // Info bloc animation is handled by CSS (@keyframes slideDownFade)
 
         // Carousel functionality - One card at a time
         let autoScrollInterval;
