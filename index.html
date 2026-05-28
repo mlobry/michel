@@ -236,10 +236,78 @@
             width: calc(100% - 60px);
         }
 
+        /* DROPDOWN MENU STYLES */
+        nav li.dropdown {
+            position: relative;
+        }
+
+        nav li.dropdown > a::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+
+        nav .dropdown-menu {
+            list-style: none;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 35, 50, 0.95);
+            min-width: 200px;
+            padding: 10px 0;
+            margin: 0;
+            border-top: 2px solid var(--secondary);
+            z-index: 1000;
+        }
+
+        nav li.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        nav .dropdown-menu li {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        nav .dropdown-menu a {
+            display: block;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        nav .dropdown-menu a:hover {
+            background: rgba(196, 147, 92, 0.2);
+            color: var(--secondary);
+            padding-left: 40px;
+        }
+
         /* Media query pour afficher le hamburger menu */
         @media (max-width: 768px) {
             .hamburger-menu {
                 display: flex;
+            }
+
+            nav .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(0,0,0,0.1);
+                border-top: none;
+                margin-left: 20px;
+            }
+
+            nav li.dropdown:hover .dropdown-menu {
+                display: block;
+            }
+
+            nav .dropdown-menu a {
+                padding: 10px 20px;
             }
         }
 
@@ -1350,6 +1418,17 @@
         <ul>
             <li><a href="#services" id="nav-services">Services</a></li>
             <li><a href="#about" id="nav-about">À Propos</a></li>
+            <li class="dropdown">
+                <a href="#" id="nav-couverture" class="dropdown-toggle">Couverture</a>
+                <ul class="dropdown-menu">
+                    <li><a href="couvreur.html" id="nav-couvreur">Couvreur</a></li>
+                    <li><a href="reparation.html" id="nav-reparation">Réparation et rénovation de toiture</a></li>
+                    <li><a href="gouttiere.html" id="nav-gouttiere">Pose et réparation de gouttière</a></li>
+                    <li><a href="demoussage.html" id="nav-demoussage">Nettoyage et démoussage de toiture</a></li>
+                    <li><a href="etancheite.html" id="nav-etancheite">Fuite et étanchéité de toiture</a></li>
+                    <li><a href="velux.html" id="nav-velux">Pose de velux</a></li>
+                </ul>
+            </li>
             <li><a href="realisations.html" id="nav-realizations">Nos Réalisations</a></li>
             <li><a href="#advantages" id="nav-advantages">Avantages</a></li>
             <li><a href="#reviews" id="nav-reviews">Avis Clients</a></li>
