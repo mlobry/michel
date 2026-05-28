@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis Gratuit - Toiture & Tradition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2332;
+            --secondary: #c4935c;
+            --accent: #e74c3c;
+            --light-bg: #f8f7f4;
+            --text-dark: #1a2332;
+            --text-light: #666;
+            --border-color: #e0ddd6;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background: var(--light-bg);
+        }
+
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            background: var(--primary);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-link {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .form-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(196, 147, 92, 0.05);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: var(--secondary);
+        }
+
+        .btn-submit {
+            background: var(--secondary);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(196, 147, 92, 0.3);
+        }
+
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .info-card {
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(196, 147, 92, 0.1) 0%, rgba(26, 35, 50, 0.05) 100%);
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+        }
+
+        .info-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .info-card a,
+        .info-card p {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: var(--secondary);
+        }
+
+        .services-list {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .services-list h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .service-item {
+            padding: 12px 15px;
+            background: var(--light-bg);
+            border-radius: 4px;
+            border-left: 3px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-item::before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--primary);
+            color: white;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-section,
+            .info-section {
+                padding: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            .nav-link {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-text">
+                <h1>Toiture & Tradition</h1>
+                <p>Experts en Toiture</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <span class="nav-link"><a href="index.html">Accueil</a></span>
+        <span class="nav-link"><a href="index.html#services">Services</a></span>
+        <span class="nav-link"><a href="index.html#contact">Contact</a></span>
+    </nav>
+
+    <div class="container">
+        <h2 class="page-title">Demander un Devis Gratuit</h2>
+
+        <div class="content-wrapper">
+            <!-- FORMULAIRE -->
+            <div class="form-section">
+                <h2>Formulaire de Devis</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="+32 4 96 99 80 79" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adresse">Adresse</label>
+                        <input type="text" id="adresse" name="adresse" placeholder="Votre adresse">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Services demandés *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="couverture" name="services" value="couverture">
+                                <label for="couverture" style="margin-bottom: 0;">Couverture</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="charpente" name="services" value="charpente">
+                                <label for="charpente" style="margin-bottom: 0;">Charpente</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ravalement" name="services" value="ravalement">
+                                <label for="ravalement" style="margin-bottom: 0;">Ravalement</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="zinguerie" name="services" value="zinguerie">
+                                <label for="zinguerie" style="margin-bottom: 0;">Zinguerie</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ramonage" name="services" value="ramonage">
+                                <label for="ramonage" style="margin-bottom: 0;">Ramonage</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Décrivez votre projet..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Demander mon Devis Gratuit</button>
+                </form>
+            </div>
+
+            <!-- INFORMATIONS DE CONTACT -->
+            <div class="info-section">
+                <div class="info-card">
+                    <h3>📞 Téléphone</h3>
+                    <a href="tel:+32496998079">+32 4 96 99 80 79</a>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-light);">Disponible du lundi au vendredi<br>de 8h à 18h</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>✉️ Email</h3>
+                    <a href="mailto:toiture-tradition@outlook.com">toiture-tradition@outlook.com</a>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-light);">Réponse sous 24h</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📍 Localisation</h3>
+                    <p>Brabant Wallon<br>Belgique</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px; color: var(--text-light);">Intervention sur tout le Brabant Wallon et régions avoisinantes</p>
+                </div>
+
+                <div class="services-list">
+                    <h3>🎯 Nos Services</h3>
+                    <div class="services-grid">
+                        <div class="service-item">Couvreur</div>
+                        <div class="service-item">Réparation toiture</div>
+                        <div class="service-item">Gouttière</div>
+                        <div class="service-item">Démoussage</div>
+                        <div class="service-item">Étanchéité</div>
+                        <div class="service-item">Velux</div>
+                        <div class="service-item">Charpente</div>
+                        <div class="service-item">Traitement bois</div>
+                        <div class="service-item">Ravalement</div>
+                        <div class="service-item">Peinture</div>
+                        <div class="service-item">Zinguerie</div>
+                        <div class="service-item">Ramonage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Toiture & Tradition. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
