@@ -1368,46 +1368,46 @@
         }
 
         /* ===== WHATSAPP ICON ===== */
-        .whatsapp-icon {
+        .call-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #25d366, #20ba5d);
+            background: linear-gradient(135deg, #d4af37, #b8941f);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
             z-index: 999;
             transition: all 0.3s ease;
             text-decoration: none;
         }
 
-        .whatsapp-icon:hover {
+        .call-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 12px 32px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.5);
         }
 
-        .whatsapp-icon svg {
-            width: 32px;
-            height: 32px;
+        .call-btn svg {
+            width: 28px;
+            height: 28px;
             fill: white;
         }
 
         @media (max-width: 768px) {
-            .whatsapp-icon {
+            .call-btn {
                 bottom: 20px;
                 right: 20px;
                 width: 55px;
                 height: 55px;
             }
 
-            .whatsapp-icon svg {
-                width: 28px;
-                height: 28px;
+            .call-btn svg {
+                width: 24px;
+                height: 24px;
             }
         }
 
@@ -1913,7 +1913,7 @@
                 </div>
                 <div class="contact-item">
                     <label id="contact-email-label">E-mail</label>
-                    <p id="contact-email"><a href="mailto:toiture-tradition@outlook.com" style="color: inherit; text-decoration: none;">toiture-tradition@outlook.com</a></p>
+                    <p id="contact-email"><a href="mailto:toiture-tradition@outlook.be" style="color: inherit; text-decoration: none;">toiture-tradition@outlook.be</a></p>
                 </div>
                 <div class="contact-item">
                     <label id="contact-address-label">Adres</label>
@@ -2158,10 +2158,10 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP ICON -->
-    <a href="https://wa.me/32496998079" class="whatsapp-icon" target="_blank" title="Contactez-nous sur WhatsApp">
+    <!-- CALL BUTTON -->
+    <a href="tel:0496998079" class="call-btn" title="Appelez-nous">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.6915026,2.88527967 C15.6693616,0.909137179 12.8804696,0 9.9571945,0 C4.47545348,0 0.0851688397,4.3870582 0.0851688397,9.8299899 C0.0851688397,11.6563168 0.532849461,13.4556609 1.40788953,15.0151496 L0,24 L9.31397766,19.6683392 C10.8183886,20.4424006 12.5016624,20.8769131 14.2328768,20.8769131 C19.7146276,20.8769131 24,16.4898549 24,10.6468766 C24,7.71162231 22.9274899,4.91854789 21.0151496,2.90633765 Z M9.9571945,18.9822639 C8.40314125,18.9822639 6.89313505,18.5891649 5.61053002,17.8458464 L5.31177285,17.6774819 L2.70146337,18.5891649 L3.61336918,16.1066538 L3.41450097,15.8138409 C2.55351124,14.4995886 2.1039231,12.9915261 2.1039231,11.4543825 C2.1039231,6.51649482 6.06286129,2.54712769 11.0073182,2.54712769 C13.4272623,2.54712769 15.7122457,3.50370282 17.3317844,5.12352275 C18.9506271,6.74334268 19.9812881,9.02820374 19.9812881,11.4543825 C19.9812881,16.3933353 16.0428496,20.3625046 11.0073182,20.3625046 Z M15.9494463,12.8445305 C15.6563168,12.7130556 14.2995502,12.0302347 14.0054162,11.9342751 C13.7117876,11.8384154 13.4961032,11.789758 13.2804188,12.0837921 C13.0647344,12.3779226 12.5195422,13.0303521 12.3310946,13.2460366 C12.1423538,13.4620248 11.953821,13.4920624 11.6616907,13.3299993 C11.3689605,13.1680385 10.4485968,12.8748091 9.35973666,11.8878239 C8.54282482,11.1399419 7.96509071,10.2247161 7.77640847,9.93068207 C7.58788731,9.63665843 7.75966904,9.46489671 7.92176825,9.30405844 C8.07092948,9.15868397 8.25956156,8.92848098 8.39112147,8.73985945 C8.52264184,8.55131838 8.47102139,8.37025169 8.38493539,8.20857985 C8.29967887,8.04697876 7.96548349,7.18993984 7.71191624,6.62292282 C7.47010847,6.08562408 7.22385227,6.15739937 7.04406539,6.1484695 C6.87174095,6.13996408 6.6573122,6.13914369 6.44246088,6.13914369 C6.23148364,6.13914369 5.88747223,6.23087024 5.59454146,6.52449419 C5.30177141,6.81834799 4.52945173,7.5013696 4.52945173,8.35878149 C4.52945173,9.21602401 5.61019129,10.037066 5.74208245,10.2527505 C5.87384412,10.4682345 7.96509071,14.1911796 11.2843851,15.7367208 C11.8933236,16.0297431 12.3641301,16.2100032 12.725337,16.3312502 C13.3334906,16.5453348 13.8831375,16.5106648 14.3221221,16.4227262 C14.8117016,16.3236241 15.8319129,15.7721772 16.0845886,15.1547651 C16.3373643,14.5372537 16.3373643,14.0076301 16.2512783,13.8857633 C16.1653969,13.7640964 15.9503097,13.6723097 15.6571798,13.5408333"/>
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
         </svg>
     </a>
 
@@ -2503,7 +2503,7 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            const mailtoLink = `mailto:toiture-tradition@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:toiture-tradition@outlook.be?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\nTéléphone: ${phone}\n\nMessage:\n${message}`)}`;
             window.location.href = mailtoLink;
         }
 
