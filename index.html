@@ -1412,6 +1412,61 @@
         }
 
         /* ===== FOOTER ===== */
+        /* ===== ZONES DE SERVICE ===== */
+        .zones-section {
+            background: var(--primary);
+            color: white;
+            padding: 70px 20px;
+        }
+
+        .zones-section .section-title {
+            color: white;
+        }
+
+        .zones-section .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .zones-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 40px auto 0;
+        }
+
+        .zone-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(196,147,92,0.4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .zone-tag:hover {
+            background: rgba(196,147,92,0.2);
+            border-color: var(--secondary);
+        }
+
+        .zone-tag i {
+            color: var(--secondary);
+            font-size: 0.75rem;
+        }
+
+        .zones-note {
+            text-align: center;
+            margin-top: 30px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.88rem;
+        }
+
         footer {
             background: var(--primary);
             color: white;
@@ -2145,6 +2200,37 @@
     </section>
 
     <!-- FOOTER -->
+    <!-- ZONES DE SERVICE -->
+    <section class="zones-section">
+        <div style="text-align: center;">
+            <h2 class="section-title" id="zones-title">Zones d'intervention</h2>
+            <p class="section-subtitle" id="zones-subtitle">Nous intervenons dans toute la région bruxelloise et le Brabant</p>
+        </div>
+        <div class="zones-grid">
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Bruxelles</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Brabant Wallon</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Brabant Flamand</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Anderlecht</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Ixelles</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Uccle</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Forest</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Etterbeek</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Saint-Gilles</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Jette</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Ganshoren</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Koekelberg</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Evere</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Molenbeek-Saint-Jean</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Saint-Josse-ten-Noode</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Woluwe-Saint-Lambert</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Woluwe-Saint-Pierre</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Berchem-Sainte-Agathe</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Auderghem</span></span>
+            <span class="zone-tag"><i class="fas fa-map-marker-alt"></i> <span>Louvain</span></span>
+        </div>
+        <p class="zones-note" id="zones-note">Vous ne trouvez pas votre commune ? Contactez-nous, nous étudions chaque demande.</p>
+    </section>
+
     <footer>
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <div>
@@ -2315,7 +2401,10 @@
                 'review-date-9': 'Vérifié - Mai 2026',
                 'review-text-9': '"Réparation et remplacement de gouttières avec mise en place d\'un système de drainage complet. Travail propre et soigné. Mon toit est maintenant complètement étanche et protégé."',
                 'footer-1': '&copy; 2024 Toiture & Tradition. Tous droits réservés.',
-                'footer-2': 'Couvreur professionnel - Bruxelles, Brabant Wallon, Belgique'
+                'footer-2': 'Couvreur professionnel - Bruxelles, Brabant Wallon, Belgique',
+                'zones-title': "Zones d'intervention",
+                'zones-subtitle': 'Nous intervenons dans toute la région bruxelloise et le Brabant',
+                'zones-note': 'Vous ne trouvez pas votre commune ? Contactez-nous, nous étudions chaque demande.'
             },
             nl: {
                 'company-name': 'Dakwerk & Traditie',
@@ -2464,7 +2553,10 @@
                 'review-date-9': 'Geverifieerd - Mei 2026',
                 'review-text-9': '"Reparatie en vervanging van dakgoten met volledige drainagesysteem. Schoon en zorgvuldig werk. Mijn dak is nu volledig waterdicht en beschermd."',
                 'footer-1': '&copy; 2024 Dakwerk & Traditie. Alle rechten voorbehouden.',
-                'footer-2': 'Professionele dakdekker - Brussel, Waals Brabant, België'
+                'footer-2': 'Professionele dakdekker - Brussel, Waals Brabant, België',
+                'zones-title': 'Werkgebieden',
+                'zones-subtitle': 'Wij werken in de hele Brusselse regio en Brabant',
+                'zones-note': 'Uw gemeente niet gevonden? Neem contact op, we bekijken elke aanvraag.'
             }
         };
 
